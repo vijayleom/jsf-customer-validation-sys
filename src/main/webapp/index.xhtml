@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>JSF Example</title>
+</h:head>
+<h:body>
+    <h:form>
+    	<center><h2>Customer Validation System</h2></center>
+    	<font color="red"><h:message for="inputName"/></font><br/><br/>
+    	<table>
+    		<tr>
+    			<td><h:outputLabel value="Enter your First name: " /></td>
+    			<td>
+	    			<h:inputText id="inputName" value="#{helloBean.name}" >
+	       				<f:validator validatorId="helloValidator" />
+	        		</h:inputText>
+        		</td>
+    		</tr>
+    		<tr>
+    			<td><h:outputLabel value="Enter your Points: " /></td>
+    			<td>
+	    			<h:inputText id="inputPoints" value="#{helloBean.points}" >
+			       		 <f:converter converterId="helloConverter" />
+			        </h:inputText>
+		        </td>
+    		</tr>
+    		<tr>
+    			<td> <h:outputLabel value="Enter your Request: " /></td>
+    			<td> <h:inputText value="#{helloBean.message}" /></td>
+    		</tr>
+    		<tr>
+    			<td colspan="2">
+    			<h:commandButton value="Process Hello" action="#{helloBean.performAction}" />
+    			</td>
+    		</tr> 
+    		</table>
+    </h:form>
+</h:body>
+</html>

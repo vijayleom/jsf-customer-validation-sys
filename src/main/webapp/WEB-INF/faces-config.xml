@@ -1,0 +1,22 @@
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+              http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+	version="2.1">
+	<navigation-rule>
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>helloPage</from-outcome>
+			<to-view-id>/helloPage.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>helloMessagePage</from-outcome>
+			<to-view-id>/helloMessagePage.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<managed-bean>
+	    <managed-bean-name>helloBean</managed-bean-name>
+	    <managed-bean-class>com.example.bean.HelloBean</managed-bean-class>
+	    <managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+</faces-config>
